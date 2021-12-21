@@ -24,7 +24,7 @@ func introScreen() {
 	pterm.Info.Println("This program is for analyzing with TCP dump.")
 	pterm.Println()
 
-	infaces, err := net.Interfaces()
+	interfaces, err := net.Interfaces()
 	if err != nil {
 		log.Printf("Error \t %v", err)
 		os.Exit(1)
@@ -35,7 +35,7 @@ func introScreen() {
 
 	table := pterm.TableData{{"Index", "Name", "MAC"}}
 
-	for i, v := range infaces {
+	for i, v := range interfaces {
 		if i == 0 {
 			continue
 		}
